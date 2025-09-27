@@ -17,9 +17,9 @@ export default function Home() {
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl font-semibold mb-4">About</h2>
           <p className="text-gray-700 dark:text-gray-300">
-            My life goal is to create digital infrastructure that businesses rely on. My heart is 
+            My goal is to create digital infrastructure that businesses rely on. My heart is 
             set on React and Next.js. As the owner of an awesome Pool Cleaning company, I see so many use cases for pool apps.
-            My big project is a Pool Company Application, and I can't wait to share more about it on my blog!
+            My big project is a Pool Company Application, and I can&apos;t wait to share more about it on my blog!
           </p>
         </div>
       </section>
@@ -44,6 +44,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-2xl font-semibold mb-4">Socials</h2>
           <p className="mb-4 text-gray-700 dark:text-gray-300">Feel free to reach out for collaboration, take a peek at my code, or just say hi!</p>
+          
           <a
             href="https://github.com/DavidPopesc"
             target="_blank"
