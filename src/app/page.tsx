@@ -1,15 +1,6 @@
 
 
-const projects = [
-  {
-    name: "Focus Wizard",
-    tag: "Winner — UGAHacks11",
-    stack: "Solana, Electron, React, TypeScript, C++",
-    description:
-      "A desktop Pomodoro app backed by a Solana smart contract: your SOL sits in escrow for the length of a focus session and pays back out in proportion to verified on-task time, no custodial backend involved. Paired the on-chain escrow with AI distraction detection and escalating voice interventions. Won MLH Best Use of Presage, built in 48 hours.",
-    href: "https://devpost.com/software/focus-wizard",
-    linkLabel: "Devpost",
-  },
+const personalProjects = [
   {
     name: "Better Form",
     stack: "Next.js, TypeScript, PostgreSQL (Neon), Stripe Connect",
@@ -25,6 +16,18 @@ const projects = [
       "A field-ops platform for a pool service company managing 60+ recurring accounts, built from firsthand experience on the routes. Mobile technician workflows cover service checklists, chemical dosing, and photo uploads, synced live with a web admin dashboard. Stripe invoicing is live; card, ACH, and crypto payments are in active development.",
     href: "https://github.com/DavidPopesc",
     linkLabel: "GitHub",
+  },
+];
+
+const hackathonProjects = [
+  {
+    name: "Focus Wizard",
+    tag: "Winner — UGAHacks11",
+    stack: "Solana, Electron, React, TypeScript, C++",
+    description:
+      "A desktop Pomodoro app backed by a Solana smart contract: your SOL sits in escrow for the length of a focus session and pays back out in proportion to verified on-task time, no custodial backend involved. Paired the on-chain escrow with AI distraction detection and escalating voice interventions. Won MLH Best Use of Presage, built in 48 hours.",
+    href: "https://devpost.com/software/focus-wizard",
+    linkLabel: "Devpost",
   },
   {
     name: "100 Million Dollar Startup Idea",
@@ -99,6 +102,38 @@ const stack = [
   },
 ];
 
+type Project = {
+  name: string;
+  tag?: string;
+  stack: string;
+  description: string;
+  href: string;
+  linkLabel: string;
+};
+
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <a
+      href={project.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="card-hover group block rounded-lg border border-black/[.08] dark:border-white/[.145] bg-white dark:bg-gray-950 p-5 hover:-translate-y-0.5"
+    >
+      <div className="flex items-start justify-between gap-2 mb-1">
+        <h3 className="font-semibold group-hover:text-accent transition-colors">{project.name}</h3>
+      </div>
+      {project.tag && (
+        <p className="text-xs font-medium text-accent mb-2">{project.tag}</p>
+      )}
+      <p className="font-mono-tag text-xs text-gray-500 dark:text-gray-400 mb-2">{project.stack}</p>
+      <p className="text-sm text-gray-700 dark:text-gray-300">{project.description}</p>
+      <span className="inline-block mt-3 text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-accent transition-colors">
+        {project.linkLabel} ↗
+      </span>
+    </a>
+  );
+}
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground">
@@ -130,39 +165,38 @@ export default function Home() {
       <section id="projects" className="py-12 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-2xl mx-auto">
           <p className="section-label mb-2">02 / projects</p>
-          <div className="flex items-center justify-between mb-6 flex-wrap gap-2">
-            <h2 className="text-2xl font-semibold">Projects &amp; Hackathons</h2>
-            <a
-              href="https://devpost.com/DavidPopesc"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium text-accent hover:underline"
-            >
-              See all on Devpost →
-            </a>
+          <h2 className="text-2xl font-semibold mb-8">Projects &amp; Hackathons</h2>
+
+          <div className="mb-10">
+            <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-4">
+              Personal Projects
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {personalProjects.map((project) => (
+                <ProjectCard key={project.name} project={project} />
+              ))}
+            </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {projects.map((project) => (
+
+          <div>
+            <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
+              <h3 className="text-sm font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">
+                Hackathon Projects
+              </h3>
               <a
-                key={project.name}
-                href={project.href}
+                href="https://devpost.com/DavidPopesc"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card-hover group block rounded-lg border border-black/[.08] dark:border-white/[.145] bg-white dark:bg-gray-950 p-5 hover:-translate-y-0.5"
+                className="text-sm font-medium text-accent hover:underline"
               >
-                <div className="flex items-start justify-between gap-2 mb-1">
-                  <h3 className="font-semibold group-hover:text-accent transition-colors">{project.name}</h3>
-                </div>
-                {project.tag && (
-                  <p className="text-xs font-medium text-accent mb-2">{project.tag}</p>
-                )}
-                <p className="font-mono-tag text-xs text-gray-500 dark:text-gray-400 mb-2">{project.stack}</p>
-                <p className="text-sm text-gray-700 dark:text-gray-300">{project.description}</p>
-                <span className="inline-block mt-3 text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-accent transition-colors">
-                  {project.linkLabel} ↗
-                </span>
+                See all on Devpost →
               </a>
-            ))}
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {hackathonProjects.map((project) => (
+                <ProjectCard key={project.name} project={project} />
+              ))}
+            </div>
           </div>
         </div>
       </section>
