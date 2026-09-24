@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import GridBackground from "../components/GridBackground";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -28,12 +29,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-      
+      <GridBackground />
+
       {/* nav bar */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-black/[.08] dark:border-white/[.145]">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-md border-b border-black/[.08] dark:border-white/[.145]">
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-accent/60 to-transparent" />
         <div className="max-w-6xl mx-auto px-6 py-4">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold">David&apos;s Website</Link>
+            <Link href="/" className="font-mono-tag text-lg font-bold">
+              <span className="text-accent">~/</span>david
+            </Link>
             <div className="hidden md:flex space-x-8">
             {/* <Link href="/portfolio" className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">Portfolio</Link>
             <Link href="/blog" className="hover:text-gray-600 dark:hover:text-gray-300 transition-colors">Blog</Link>
