@@ -24,7 +24,7 @@ const projects = [
     tag: "Building now",
     stack: "Next.js, React Native, Expo, Node.js, PostgreSQL (Supabase)",
     description:
-      "A field-ops platform I built to solve my own problem: running a pool business with 60+ recurring accounts. Mobile technician workflows cover service checklists, chemical dosing, and photo uploads, synced live with a web admin dashboard. Stripe invoicing is live; card, ACH, and crypto payments are in active development.",
+      "A field-ops platform for a pool service company managing 60+ recurring accounts, built from firsthand experience on the routes. Mobile technician workflows cover service checklists, chemical dosing, and photo uploads, synced live with a web admin dashboard. Stripe invoicing is live; card, ACH, and crypto payments are in active development.",
     href: "https://github.com/DavidPopesc",
     linkLabel: "GitHub",
   },
@@ -117,9 +117,9 @@ export default function Home() {
           <h2 className="text-2xl font-semibold mb-4">About</h2>
           <p className="text-gray-700 dark:text-gray-300">
             I like finding a real, annoying problem and just building the tool that fixes it.
-            Running a pool business gave me a field-ops app; volunteering at my church gave me a
-            stablecoin donation flow; a 48-hour hackathon gave me an escrow smart contract on
-            Solana. My heart is set on React and Next.js, but I&apos;ll reach for whatever
+            Working pool service routes gave me a field-ops app; volunteering at my church gave
+            me a stablecoin donation flow; a 48-hour hackathon gave me an escrow smart contract
+            on Solana. My heart is set on React and Next.js, but I&apos;ll reach for whatever
             actually solves the problem &mdash; crypto rails included.
           </p>
         </div>
