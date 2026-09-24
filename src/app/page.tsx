@@ -3,7 +3,7 @@
 const projects = [
   {
     name: "Focus Wizard",
-    tag: "🏆 Winner — UGAHacks11",
+    tag: "Winner — UGAHacks11",
     stack: "Solana, Electron, React, TypeScript, C++",
     description:
       "A desktop Pomodoro app backed by a Solana smart contract: your SOL sits in escrow for the length of a focus session and pays back out in proportion to verified on-task time, no custodial backend involved. Paired the on-chain escrow with AI distraction detection and escalating voice interventions. Won MLH Best Use of Presage, built in 48 hours.",
@@ -12,7 +12,6 @@ const projects = [
   },
   {
     name: "Better Form",
-    tag: "Building now",
     stack: "Next.js, TypeScript, PostgreSQL (Neon), Stripe Connect",
     description:
       "A form-builder platform for creating, publishing, and managing forms and submissions. Paid forms accept crypto and stablecoin payments alongside cards through Stripe Connect, routing funds straight to each creator's connected account, with webhook-confirmed submissions.",
@@ -21,7 +20,6 @@ const projects = [
   },
   {
     name: "Pool Company App",
-    tag: "Building now",
     stack: "Next.js, React Native, Expo, Node.js, PostgreSQL (Supabase)",
     description:
       "A field-ops platform for a pool service company managing 60+ recurring accounts, built from firsthand experience on the routes. Mobile technician workflows cover service checklists, chemical dosing, and photo uploads, synced live with a web admin dashboard. Stripe invoicing is live; card, ACH, and crypto payments are in active development.",
@@ -30,7 +28,7 @@ const projects = [
   },
   {
     name: "100 Million Dollar Startup Idea",
-    tag: "🏆 Winner — CUhackit '26",
+    tag: "Winner — CUhackit '26",
     stack: "AI-powered founder critique platform",
     description:
       "Simulates a panel of 3 VC personas that challenge startup pitches from different investment angles, built in 24 hours. Users upload a pitch deck, respond to AI questioning, and get feedback on clarity, jargon, and founder-investor fit. Won the Launchpad Tech Ventures Startup Toolkit Challenge.",
@@ -47,7 +45,6 @@ const experience = [
     period: "Apr 2022 — Present",
     href: "https://suwaneepools.com",
     bullets: [
-      "Implemented Bitcoin payments on customer invoices, giving clients a crypto option alongside traditional payment methods.",
       "Developed internal software tools to support operations, including a pool company application and workflow-specific utilities for service management.",
       "Service 60 commercial and residential accounts as a field technician, bringing firsthand operational context to the software.",
     ],
@@ -69,31 +66,37 @@ const experience = [
     period: "Jan 2024 — Present",
     bullets: [
       "Responsible for updating and maintaining the website.",
-      "Building a stablecoin donation option offered alongside traditional payment methods.",
       "Building a feature to automate calendar-related updates and improve site administration.",
     ],
   },
 ];
 
 const stack = [
-  "TypeScript",
-  "JavaScript",
-  "Python",
-  "C++",
-  "React",
-  "Next.js",
-  "React Native",
-  "Expo",
-  "Vue",
-  "Node.js",
-  "Electron",
-  "PostgreSQL",
-  "SQLite",
-  "MySQL",
-  "Tailwind CSS",
-  "Solana",
-  "Smart Contracts",
-  "Stablecoin Payments",
+  {
+    category: "Languages",
+    items: ["TypeScript", "JavaScript", "Python", "Java", "C++"],
+  },
+  {
+    category: "Frameworks & Tools",
+    items: [
+      "React",
+      "Next.js",
+      "React Native",
+      "Expo",
+      "Vue",
+      "Node.js",
+      "Electron",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    category: "Databases",
+    items: ["PostgreSQL", "SQLite", "MySQL"],
+  },
+  {
+    category: "Blockchain & Crypto",
+    items: ["Solana", "Smart Contracts", "Stablecoin Payments"],
+  },
 ];
 
 export default function Home() {
@@ -106,7 +109,7 @@ export default function Home() {
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
             Computer Science &amp; Cybersecurity student at the University of North Georgia.
             I build software that solves real problems I run into, from field operations to
-            on-chain payments, one weekend hackathon at a time.
+            hackathon prototypes.
           </p>
         </div>
       </section>
@@ -118,9 +121,8 @@ export default function Home() {
           <p className="text-gray-700 dark:text-gray-300">
             I like finding a real, annoying problem and just building the tool that fixes it.
             Working pool service routes gave me a field-ops app; volunteering at my church gave
-            me a stablecoin donation flow; a 48-hour hackathon gave me an escrow smart contract
-            on Solana. My heart is set on React and Next.js, but I&apos;ll reach for whatever
-            actually solves the problem &mdash; crypto rails included.
+            me a website to maintain; a 48-hour hackathon gave me a working prototype that won
+            its category. I&apos;ll reach for whatever actually solves the problem.
           </p>
         </div>
       </section>
@@ -151,9 +153,9 @@ export default function Home() {
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <h3 className="font-semibold group-hover:text-accent transition-colors">{project.name}</h3>
                 </div>
-                <p className="text-xs font-medium text-accent mb-2">
-                  {project.tag}
-                </p>
+                {project.tag && (
+                  <p className="text-xs font-medium text-accent mb-2">{project.tag}</p>
+                )}
                 <p className="font-mono-tag text-xs text-gray-500 dark:text-gray-400 mb-2">{project.stack}</p>
                 <p className="text-sm text-gray-700 dark:text-gray-300">{project.description}</p>
                 <span className="inline-block mt-3 text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-accent transition-colors">
@@ -208,17 +210,26 @@ export default function Home() {
       <section id="skills" className="py-12 px-6 bg-gray-50 dark:bg-gray-900">
         <div className="max-w-2xl mx-auto">
           <p className="section-label mb-2">04 / stack</p>
-          <h2 className="text-2xl font-semibold mb-4">My Beloved Tech Stack</h2>
-          <ul className="flex flex-wrap gap-3">
-            {stack.map((item) => (
-              <li
-                key={item}
-                className="chip border border-black/[.08] dark:border-white/[.145] rounded px-3 py-1 text-sm"
-              >
-                {item}
-              </li>
+          <h2 className="text-2xl font-semibold mb-6">My Beloved Tech Stack</h2>
+          <div className="space-y-5">
+            {stack.map((group) => (
+              <div key={group.category}>
+                <p className="font-mono-tag text-xs text-gray-500 dark:text-gray-400 mb-2">
+                  {group.category}
+                </p>
+                <ul className="flex flex-wrap gap-3">
+                  {group.items.map((item) => (
+                    <li
+                      key={item}
+                      className="chip border border-black/[.08] dark:border-white/[.145] rounded px-3 py-1 text-sm"
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
