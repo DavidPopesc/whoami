@@ -2,31 +2,31 @@
 
 const projects = [
   {
-    name: "Pool Company App",
-    tag: "Building now",
-    stack: "Next.js, React Native, Expo, Node.js, PostgreSQL (Supabase)",
+    name: "Focus Wizard",
+    tag: "🏆 Winner — UGAHacks11",
+    stack: "Solana, Electron, React, TypeScript, C++",
     description:
-      "Full-stack pool service platform for scheduling and field operations, supporting 60+ recurring commercial and residential accounts. Mobile technician workflows cover service checklists, water-chemistry readings, chemical dosing, issue reporting, and photo uploads, synced live with a web admin dashboard.",
-    href: "https://github.com/DavidPopesc",
-    linkLabel: "GitHub",
+      "A desktop Pomodoro app backed by a Solana smart contract: your SOL sits in escrow for the length of a focus session and pays back out in proportion to verified on-task time, no custodial backend involved. Paired the on-chain escrow with AI distraction detection and escalating voice interventions. Won MLH Best Use of Presage, built in 48 hours.",
+    href: "https://devpost.com/software/focus-wizard",
+    linkLabel: "Devpost",
   },
   {
     name: "Better Form",
     tag: "Building now",
-    stack: "Next.js, TypeScript, PostgreSQL (Neon), REST APIs",
+    stack: "Next.js, TypeScript, PostgreSQL (Neon), Stripe Connect",
     description:
-      "Full-stack form-builder platform for creating, publishing, and managing forms and submissions, with verified-email responses, configurable limits, and webhook integrations to connect submissions with external systems.",
+      "A form-builder platform for creating, publishing, and managing forms and submissions. Paid forms accept crypto and stablecoin payments alongside cards through Stripe Connect, routing funds straight to each creator's connected account, with webhook-confirmed submissions.",
     href: "https://github.com/DavidPopesc",
     linkLabel: "GitHub",
   },
   {
-    name: "Focus Wizard",
-    tag: "🏆 Winner — UGAHacks11",
-    stack: "Desktop productivity tool",
+    name: "Pool Company App",
+    tag: "Building now",
+    stack: "Next.js, React Native, Expo, Node.js, PostgreSQL (Supabase)",
     description:
-      "A desktop app that forces the user to stay focused on one task, built in 48 hours. Designed the project's constraints and helped deliver a working prototype that won its category.",
-    href: "https://devpost.com/software/focus-wizard",
-    linkLabel: "Devpost",
+      "A field-ops platform I built to solve my own problem: running a pool business with 60+ recurring accounts. Mobile technician workflows cover service checklists, chemical dosing, and photo uploads, synced live with a web admin dashboard. Stripe invoicing is live; card, ACH, and crypto payments are in active development.",
+    href: "https://github.com/DavidPopesc",
+    linkLabel: "GitHub",
   },
   {
     name: "100 Million Dollar Startup Idea",
@@ -41,15 +41,15 @@ const projects = [
 
 const experience = [
   {
-    role: "Founder & Software Developer",
+    role: "Technician & Software Developer",
     org: "Suwanee Pools LLC",
     location: "Suwanee, GA",
     period: "Apr 2022 — Present",
     href: "https://suwaneepools.com",
     bullets: [
-      "Built and manage a pool business serving 60 commercial and residential accounts.",
-      "Developed internal software tools to support operations, including a pool company application and workflow-specific utilities.",
-      "Handle client relationships, scheduling, service operations, and business growth day to day.",
+      "Implemented Bitcoin payments on customer invoices, giving clients a crypto option alongside traditional payment methods.",
+      "Developed internal software tools to support operations, including a pool company application and workflow-specific utilities for service management.",
+      "Service 60 commercial and residential accounts as a field technician, bringing firsthand operational context to the software.",
     ],
   },
   {
@@ -69,6 +69,7 @@ const experience = [
     period: "Jan 2024 — Present",
     bullets: [
       "Responsible for updating and maintaining the website.",
+      "Building a stablecoin donation option offered alongside traditional payment methods.",
       "Building a feature to automate calendar-related updates and improve site administration.",
     ],
   },
@@ -90,6 +91,9 @@ const stack = [
   "SQLite",
   "MySQL",
   "Tailwind CSS",
+  "Solana",
+  "Smart Contracts",
+  "Stablecoin Payments",
 ];
 
 export default function Home() {
@@ -100,8 +104,9 @@ export default function Home() {
           <p className="section-label mb-3">$ whoami</p>
           <h1 className="glow-text text-4xl md:text-5xl font-bold mb-4">David Popescu</h1>
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            Computer Science &amp; Cybersecurity student at the University of North Georgia,
-            building business web applications and the occasional hackathon project.
+            Computer Science &amp; Cybersecurity student at the University of North Georgia.
+            I build software that solves real problems I run into, from field operations to
+            on-chain payments, one weekend hackathon at a time.
           </p>
         </div>
       </section>
@@ -111,10 +116,11 @@ export default function Home() {
           <p className="section-label mb-2">01 / about</p>
           <h2 className="text-2xl font-semibold mb-4">About</h2>
           <p className="text-gray-700 dark:text-gray-300">
-            My goal is to create digital infrastructure that businesses rely on. My heart is
-            set on React and Next.js. As the owner of an awesome pool cleaning company, I see so
-            many use cases for pool apps. My big project is a Pool Company Application, and I
-            can&apos;t wait to share more about it on my blog!
+            I like finding a real, annoying problem and just building the tool that fixes it.
+            Running a pool business gave me a field-ops app; volunteering at my church gave me a
+            stablecoin donation flow; a 48-hour hackathon gave me an escrow smart contract on
+            Solana. My heart is set on React and Next.js, but I&apos;ll reach for whatever
+            actually solves the problem &mdash; crypto rails included.
           </p>
         </div>
       </section>
