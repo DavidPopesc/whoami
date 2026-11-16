@@ -26,7 +26,7 @@ export default function Eduroam() {
               figuring out how to connect.
             </p>
             <p>
-              I&apos;ve got a Ubiquiti router, and I&apos;m familiar with setting upPasspoint configurations.
+              I&apos;ve got a Ubiquiti router, and I&apos;m familiar with setting up Passpoint configurations.
             </p>
           </div>
           <div className="flex justify-center gap-4 mt-12">
